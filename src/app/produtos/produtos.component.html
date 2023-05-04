@@ -1,0 +1,14 @@
+<h1 class="title">Produtos</h1>
+
+<section class="product-list">
+    <app-produto-card 
+    *ngFor="let prod of products"
+    [name]=prod.name
+    [price]=prod.price 
+    [desc]=prod.desc
+    [img]="prod.img"
+    [id]="prod.id"
+    [qtdEstoque]="prod.qtdEstoque"
+    >
+</app-produto-card>
+</section>

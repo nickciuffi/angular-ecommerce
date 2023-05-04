@@ -1,0 +1,8 @@
+<div class="product-card">
+    <h1 class="product-name">{{name}}</h1>
+    <div class="img-container">
+    <img [src]="img" [alt]="name" />
+</div>
+    <p class="product-price">{{price | currency : 'BRL'}}</p>
+    <a routerLink="/produtos/{{id}}" class="product-buy-button" >Comprar</a>
+</div>

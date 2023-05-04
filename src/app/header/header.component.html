@@ -1,0 +1,36 @@
+<header class="main-header">
+    <h1 routerLink="produtos">Nico store</h1>
+    <nav>
+        <ul>
+            <li>
+                <a routerLink="produtos">Produtos</a>
+            </li>
+
+            <li>
+                <a routerLink="contato">Contato</a>
+            </li>
+            <li>
+                <a class="carrinho" routerLink="carrinho"><p>Carrinho</p>
+                    <i class="fa-solid fa-cart-shopping" ></i>
+                    <div class="badge">{{getCarrinhoQtd()}}</div>
+                </a>
+            </li>
+           
+            <div class="icons">
+            <li>
+                <a><i class="fa-brands fa-facebook"></i></a>
+            </li> 
+            <li>
+                <a><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+                <a><i class="fa-brands fa-linkedin"></i></a>
+            </li>
+        </div>
+        </ul>
+    </nav>
+    <form class="search-form">
+        <input type="text">
+        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+</header>

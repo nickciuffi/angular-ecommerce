@@ -1,0 +1,27 @@
+<h1 *ngIf="!product" class="not-found">Produto não encontrado</h1>
+
+<h2 *ngIf="product" class="title">{{product.name}}</h2>
+<div *ngIf="product" class="product-container">
+    
+    <div class="image-container">
+        <img [src]="product.img" [alt]="product.name">
+    </div>
+
+    <div class="description">
+        <div class="prices">
+       <h2 class="old-price">{{product.price / 2 | currency : 'BRL'}}</h2>
+        <h3 class="price green">{{product.price | currency : 'BRL'}}</h3>
+    </div>
+        <p *ngIf="product.qtdEstoque > 0">Estoque disponível</p>
+        <p *ngIf="product.qtdEstoque <= 0" class="indisponivel">Produto indisponível</p>
+        <label *ngIf="product.qtdEstoque > 0" class="qtd">
+            Quantidade:
+            <input type="number" [max]="product.qtdEstoque" min="1" [(ngModel)] = 'qtd'>
+            unidade(s)
+        </label>
+        <p *ngIf="product.qtdEstoque > 0" class="availability">
+            <label class="green">{{product.qtdEstoque}}</label> unidades em estoque
+        </p>
+        <button (click)="adicionaCarrinho()" *ngIf="product.qtdEstoque > 0">Adicionar ao carrinho</button>
+    </div>
+</div>
